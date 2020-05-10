@@ -171,15 +171,13 @@ CREATE TABLE IF NOT EXISTS `mydb`.`sarcini` (
   `complet` TINYINT NULL,
   `data` DATE NULL,
   `ora` TIME NULL,
-  `listaTreburicol` VARCHAR(45) NULL,
   `eveniment_idEveniment` INT UNSIGNED NOT NULL,
-  `eveniment_idUser` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`idlistaTreburi`),
   UNIQUE INDEX `idlistaTreburi_UNIQUE` (`idlistaTreburi` ASC) VISIBLE,
-  INDEX `fk_sarcini_eveniment1_idx` (`eveniment_idEveniment` ASC, `eveniment_idUser` ASC) VISIBLE,
+  INDEX `fk_sarcini_eveniment1_idx` (`eveniment_idEveniment` ASC) VISIBLE,
   CONSTRAINT `fk_sarcini_eveniment1`
-    FOREIGN KEY (`eveniment_idEveniment` , `eveniment_idUser`)
-    REFERENCES `mydb`.`evenimente` (`idEveniment` , `idUser`)
+    FOREIGN KEY (`eveniment_idEveniment`)
+    REFERENCES `mydb`.`evenimente` (`idEveniment`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
