@@ -22,7 +22,7 @@ DROP TABLE IF EXISTS `mydb`.`useri` ;
 CREATE TABLE IF NOT EXISTS `mydb`.`useri` (
   `idUser` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `loginNume` VARCHAR(45) NOT NULL,
-  `parola` VARCHAR(45) NOT NULL,
+  `parola` BLOB NOT NULL,
   `mail` VARCHAR(45) NOT NULL,
   `showNume` VARCHAR(45) NOT NULL,
   `showPrenume` VARCHAR(45) NOT NULL,
