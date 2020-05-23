@@ -14,6 +14,7 @@ namespace web_plantastic.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
+        
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
@@ -21,7 +22,7 @@ namespace web_plantastic.Pages
 
         public void OnGet()
         {
-
+            
         }
 
         public string helloRusia()
@@ -30,13 +31,14 @@ namespace web_plantastic.Pages
             dbCon.DatabaseName = "mybd";
             if (dbCon.IsConnect())
             {
-                string query = "SELECT loginNume as user, cast(aes_decrypt(parola,'Mona Lisa') as char(45)) as parola FROM mydb.useri WHERE loginNume='ermania';";
+                dbCon.Connection.Open();
+                string query = "SELECT loginNume as user, cast(aes_decrypt(parola,'Mona Lisa') as char(45)) as parola FROM mydb.useri WHERE loginNume='Germania';";
                 var cmd = new MySqlCommand(query, dbCon.Connection);
                 var reader = cmd.ExecuteReader();
                 reader.Read();
                 if (reader.HasRows)
                 {
-                  
+
                     string utilizator = reader.GetString(0);
                     string parola = reader.GetString(1);
                     dbCon.Close();
@@ -47,9 +49,12 @@ namespace web_plantastic.Pages
                     dbCon.Close();
                     return "Userul sau parola gresita!";
                 }
-                
+
             }
-            else return "Eroare la conexiunea bazei de date!";
+            else {
+                dbCon.Close();
+                return "Eroare la conexiunea bazei de date!"; 
+            }
         }
     }
 }

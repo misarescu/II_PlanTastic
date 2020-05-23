@@ -4,9 +4,22 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <p>
-        @Model.helloRusia()
+<div class="text-center" style="color:#C2847A; font-family: Helvetica; font-size: 24pt">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class ="control-label text-left" for="nume-utilizator">
+                Nume Utilizator
+            </label>
+            <input class="text-right" type="text" name="nume-utilizator" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label class ="control-label text-left" for="parola">
+                Parola
+            </label>
+            <input class="text-right" type="password" name="parola" />
+        </div>
 
-    </p>
+
+    </form>
 </div>

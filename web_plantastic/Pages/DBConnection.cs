@@ -40,7 +40,6 @@ namespace Database
                     return false;
                 string connstring = string.Format("Server=127.0.0.1; database=mydb; UID=root; password=root", databaseName);
                 connection = new MySqlConnection(connstring);
-                connection.Open();
             }
 
             return true;

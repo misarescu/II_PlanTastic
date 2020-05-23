@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\giorg\\Desktop\\POLI STUFF\\ii_proj\\web_plantastic\\web_plantastic.csproj": {}
+    "D:\\POLI STUFF\\II\\Proiect\\PlanTastic\\II_PlanTastic\\web_plantastic\\web_plantastic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\giorg\\Desktop\\POLI STUFF\\ii_proj\\web_plantastic\\web_plantastic.csproj": {
+    "D:\\POLI STUFF\\II\\Proiect\\PlanTastic\\II_PlanTastic\\web_plantastic\\web_plantastic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\giorg\\Desktop\\POLI STUFF\\ii_proj\\web_plantastic\\web_plantastic.csproj",
+        "projectUniqueName": "D:\\POLI STUFF\\II\\Proiect\\PlanTastic\\II_PlanTastic\\web_plantastic\\web_plantastic.csproj",
         "projectName": "web_plantastic",
-        "projectPath": "C:\\Users\\giorg\\Desktop\\POLI STUFF\\ii_proj\\web_plantastic\\web_plantastic.csproj",
-        "packagesPath": "C:\\Users\\giorg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\giorg\\Desktop\\POLI STUFF\\ii_proj\\web_plantastic\\obj\\",
+        "projectPath": "D:\\POLI STUFF\\II\\Proiect\\PlanTastic\\II_PlanTastic\\web_plantastic\\web_plantastic.csproj",
+        "packagesPath": "C:\\Users\\Mihai\\.nuget\\packages\\",
+        "outputPath": "D:\\POLI STUFF\\II\\Proiect\\PlanTastic\\II_PlanTastic\\web_plantastic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\giorg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mihai\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -41,6 +41,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.20, )"
