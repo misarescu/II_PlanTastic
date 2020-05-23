@@ -173,3 +173,4 @@ D:\POLI STUFF\II\Proiect\PlanTastic\II_PlanTastic\web_plantastic\bin\Debug\netco
 D:\POLI STUFF\II\Proiect\PlanTastic\II_PlanTastic\web_plantastic\obj\Debug\netcoreapp3.1\web_plantastic.csproj.CoreCompileInputs.cache
 D:\POLI STUFF\II\Proiect\PlanTastic\II_PlanTastic\web_plantastic\obj\Debug\netcoreapp3.1\web_plantastic.MvcApplicationPartsAssemblyInfo.cache
 D:\POLI STUFF\II\Proiect\PlanTastic\II_PlanTastic\web_plantastic\obj\Debug\netcoreapp3.1\Razor\Pages\Contact.cshtml.g.cs
+D:\POLI STUFF\II\Proiect\PlanTastic\II_PlanTastic\web_plantastic\obj\Debug\netcoreapp3.1\Razor\Pages\UserPage.cshtml.g.cs

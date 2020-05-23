@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{loginError?}"
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -9,18 +9,19 @@
     <br />
     <br />
     <br />
+    <p>@Model.logInMessage</p>
     <div class="card rounded" style="background-color:#280003; border-style:solid; border-width:medium; border-color:#C2847A">
         <div class="card-body">
-            <form class="form-horizontal align-middle">
+            <form class="form-horizontal align-middle" method="post">
                 <div class="form-group row">
-                    <label class ="control-label text-left col" for="nume-utilizator">
+                    <label class ="control-label text-left col" asp-for="utilizator">
                         Nume Utilizator:
                     </label>
-                    <input class="text-right col" type="text" name="nume-utilizator" />
+                    <input class="text-right col" type="text" name="utilizator" />
                 </div>
                 <br />
                 <div class="form-group row">
-                    <label class ="control-label text-left col" for="parola">
+                    <label class ="control-label text-left col" asp-for="parola">
                         Parola:
                     </label>
                     <input class="text-right col" type="password" name="parola" />
@@ -31,4 +32,10 @@
             </form>
         </div>
     </div>
+
+    @if (Model.LoginError)
+    {
+        <p>Nume de utilizator sau parola introduse gresit!</p>
+    }
+
 </div>
