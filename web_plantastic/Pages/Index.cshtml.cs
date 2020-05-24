@@ -19,8 +19,7 @@ namespace web_plantastic.Pages
 
         [BindProperty]
         public string parola { get; set; }
-        [BindProperty]
-        public string logInMessage { get; set; }
+
         [BindProperty(SupportsGet = true)]
         public bool LoginError { get; set; }
 

@@ -1,5 +1,4 @@
 SELECT loginNume as user, cast(aes_decrypt(parola,'Mona Lisa') as char(45)) as parola FROM mydb.useri;
-select * from useri;
 
 select idUser from useri where loginNume = 'Germania';
 
@@ -18,3 +17,20 @@ on useri.idUser = evenimente.idUser
 on evenimente.idEveniment = dataevenimente.idEveniment*/
 inner join mydb.sarcini
 on evenimente.idEveniment = sarcini.eveniment_idEveniment;
+
+SELECT loginNume as user, cast(aes_decrypt(parola,'Mona Lisa') as char(45)) as parola FROM mydb.useri WHERE loginNume = 'URSS';
+
+SELECT showNume, showPrenume FROM mydb.useri WHERE loginNume = 'URSS';
+
+SELECT evenimente.idEveniment, evenimente.nume, evenimente.tip, evenimente.descriere, dataInceput,oraInceput,dataSfarsit,oraSfarsit
+FROM mydb.useri
+INNER JOIN mydb.evenimente
+ON useri.idUser = evenimente.idUser
+INNER JOIN mydb.dataevenimente
+ON evenimente.idEveniment = dataevenimente.idEveniment
+/*WHERE LoginNume = 'URSS'*/
+ORDER BY dataInceput ASC, oraInceput ASC, dataSfarsit ASC, oraSfarsit ASC;
+
+select * from mydb.useri;
+select * from mydb.evenimente;
+select * from mydb.dataevenimente;

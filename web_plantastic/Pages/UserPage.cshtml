@@ -5,5 +5,36 @@
 }
 
 <div class="text-center" style="color:#C2847A; font-family: Helvetica; font-size: 24pt">
-    <h1>Hello  @Model.User</h1>
+    <h1>@Model.Greeting</h1>
+    <button type="button" class="btn " style="font-size:24pt; background-color:#C2847A; color:#280003">Adauga eveniment</button>
+    <p>Lista curenta de evenimente:</p>
+    <ul style="list-style:none">
+        @foreach (var ev in Model.evenimente)
+        {
+            <li>
+                <div class="card rounded" style="background-color:#280003; border-style:solid; border-width:medium; border-color:#C2847A; margin:3pt">
+                    <div class="card-body row">
+                        @if (ev.tip == "unic")
+                        {
+                            <button class="btn col-1" style="background-color:#280003">
+                                <img src="~/checkbox.svg" width="50" height="50" />
+                            </button>
+                        }
+                        @if (ev.tip == "terminat")
+                        {
+                            <button class="btn col-1" style="background-color:#280003">
+                                <img src="~/done.svg" width="50" height="50" />
+                            </button>
+                        }
+                        <button class="btn col-10" style="color:#C2847A; background-color:#280003">
+                            <p class="card-header" style="font-size:30pt">@ev.nume</p>
+                            <p class="card-text" style="font-size:14pt">Descrierea evenimentului:   @ev.descriere</p>
+                            <p class="card-text" style="font-size:14pt">Data de inceput:    @ev.inceput</p>
+                        </button>
+                        <button class="btn col-1" style="color:#C2847A; background-color:#280003">X</button>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
 </div>
