@@ -12,17 +12,13 @@
     {
         <p>Completati toate campurile!</p>
     }
-    else if (Model.parolaNepotrivita)
-    {
-        <p>Parolele nu se potrivesc!</p>
-    }
-    else if (Model.alreadyExists)
-    {
-        <p>Numele de utilizator introdus exista deja!</p>
-    }
     else if (Model.eroare)
     {
-        <p>A aparut o eroare in adaugarea unui nou user!</p>
+        <p>A aparut o eroare in adaugarea unui nou eveniment!</p>
+    }
+    else if (Model.succes)
+    {
+        <p>Inregistrare incheiata cu succes!</p>
     }
     else
     {
@@ -41,11 +37,11 @@
                     <label class="control-label text-left col" asp-for="descriere">
                         Descriere:
                     </label>
-                    <input class="text-right col" type="password" name="descriere" />
+                    <input class="text-right col" type="text" name="descriere" />
                 </div>
                 <div class="form-group row">
                     <label class="control-label text-left col" asp-for="tip">
-                        Rescrieti parola:
+                        Alegeti tipul evenimentului:
                     </label>
                     <select id="tip" name="tip">
                         <option value="unic" selected>unic</option>
@@ -53,8 +49,20 @@
                         <option value="repetitiv">repetitiv</option>
                     </select>
                 </div>
+                <div class="form-group row">
+                    <label class="control-label text-left col" asp-for="dataEvenimentInceput">
+                        Alegeti data de inceput:
+                    </label>
+                    <input class="text-right col" type="datetime" name="dataEvenimentInceput" />
+                </div>
+                <div class="form-group row">
+                    <label class="control-label text-left col" asp-for="dataEvenimentSfarsit">
+                        Alegeti data de sfarsit:
+                    </label>
+                    <input class="text-right col" type="datetime" name="dataEvenimentSfarsit" />
+                </div>
                 <div class="form-group d-flex justify-content-between row w-100">
-                    <button type="submit" name="register" value="register" class="btn col-3 text-left" style="background-color:#C2847A; color:#280003; font-size:24pt; margin-top:4pt;margin-left:2pt">Register</button>
+                    <button type="submit" name="adauga" value="adauga" class="btn col-3 text-left" style="background-color:#C2847A; color:#280003; font-size:24pt; margin-top:4pt;margin-left:2pt">Adauga</button>
                     <button type="submit" name="inapoi" value="inapoi" class="btn col-3 text-left" style="background-color:#C2847A; color:#280003; font-size:24pt; margin-top:4pt;margin-left:2pt">Inapoi</button>
                 </div>
             </form>

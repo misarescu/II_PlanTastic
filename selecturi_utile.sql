@@ -34,3 +34,12 @@ ORDER BY dataInceput ASC, oraInceput ASC, dataSfarsit ASC, oraSfarsit ASC;
 select * from mydb.useri;
 select * from mydb.evenimente;
 select * from mydb.dataevenimente;
+
+select loginNume from mydb.useri where loginNume = 'URSS';
+select idUser from mydb.useri;
+
+select idEveniment 
+from mydb.evenimente
+inner join mydb.useri 
+on useri.idUser = evenimente.idUser 
+where useri.loginNume = 'URSS' and evenimente.nume = 'batalia de la stalingrad';
