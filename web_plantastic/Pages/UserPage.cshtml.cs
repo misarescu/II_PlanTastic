@@ -47,6 +47,15 @@ namespace web_plantastic.Pages
             
         }
         
+        public IActionResult OnPost()
+        {
+            if (Request.Form["add"] == "add")
+            {
+                return RedirectToPage("/AddEvent", new { User = User});
+            }
+            return RedirectToPage("/UserPage", new { User = User });
+        }
+
         public object ToggleEveniment(Eveniment ev)
         {
             if (ev.tip == "unic")
@@ -123,6 +132,29 @@ namespace web_plantastic.Pages
             }
         }
 
-        
+        private int getUserId(string user)
+        {
+            var dbCon = DBConnection.Instance();
+            dbCon.DatabaseName = "mybd";
+            if (dbCon.IsConnect())
+            {
+                List<Eveniment> evenimenteleObtinute = new List<Eveniment>();
+                dbCon.Connection.Open();
+                string query = $"SELECT idUser FROM mydb.useri WHERE loginNume = '{user}';";
+                var cmd = new MySqlCommand(query, dbCon.Connection);
+                var reader = cmd.ExecuteReader();
+                reader.Read();
+                int id = reader.GetInt16(0);
+
+                dbCon.Close();
+                return id;
+            }
+            else
+            {
+                dbCon.Close();
+                return 0;
+            }
+        }
+
     }
 }

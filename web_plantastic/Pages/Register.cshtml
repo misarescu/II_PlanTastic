@@ -1,0 +1,81 @@
+﻿@page
+@model web_plantastic.Pages.RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="text-center" style="color:#C2847A; font-family: Helvetica; font-size: 24pt">
+    <br />
+    <br />
+    <br />
+    @if (Model.invalidInput)
+    {
+        <p>Completati toate campurile!</p>
+    }
+    else if (Model.parolaNepotrivita)
+    {
+        <p>Parolele nu se potrivesc!</p>
+    }
+    else if (Model.succes)
+    {
+        <p>Inregistrare incheiata cu succes!</p>
+    }
+    else if(Model.alreadyExists){
+        <p>Numele de utilizator introdus exista deja!</p>
+    }
+    else if (Model.eroare)
+    {
+        <p>A aparut o eroare in adaugarea unui nou user!</p>
+    }
+    else
+    {
+        <br />
+    }
+    <div class="card rounded" style="background-color:#280003; border-style:solid; border-width:medium; border-color:#C2847A">
+        <div class="card-body">
+            <form class="form-horizontal align-middle" method="post">
+                <div class="form-group row">
+                    <label class="control-label text-left col" asp-for="utilizator">
+                        Nume Utilizator:
+                    </label>
+                    <input class="text-right col" type="text" name="utilizator" />
+                </div>
+                <div class="form-group row">
+                    <label class="control-label text-left col" asp-for="parola1">
+                        Parola:
+                    </label>
+                    <input class="text-right col" type="password" name="parola1" />
+                </div>
+                <div class="form-group row">
+                    <label class="control-label text-left col" asp-for="parola2">
+                        Rescrieti parola:
+                    </label>
+                    <input class="text-right col" type="password" name="parola2" />
+                </div>
+                <div class="form-group row">
+                    <label class="control-label text-left col" asp-for="mail">
+                        Email:
+                    </label>
+                    <input class="text-right col" type="text" name="mail" />
+                </div>
+                <div class="form-group row">
+                    <label class="control-label text-left col" asp-for="nume">
+                        Nume:
+                    </label>
+                    <input class="text-right col" type="text" name="nume" />
+                </div>
+                <div class="form-group row">
+                    <label class="control-label text-left col" asp-for="prenume">
+                        Prenume:
+                    </label>
+                    <input class="text-right col" type="text" name="prenume" />
+                </div>
+                <div class="form-group d-flex justify-content-between row w-100">
+                    <button type="submit" name="register" value="register" class="btn col-3 text-left" style="background-color:#C2847A; color:#280003; font-size:24pt; margin-top:4pt;margin-left:2pt">Register</button>
+                    <button type="submit" name="inapoi" value="inapoi" class="btn col-3 text-left" style="background-color:#C2847A; color:#280003; font-size:24pt; margin-top:4pt;margin-left:2pt">Inapoi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

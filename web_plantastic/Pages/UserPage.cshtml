@@ -6,7 +6,13 @@
 
 <div class="text-center" style="color:#C2847A; font-family: Helvetica; font-size: 24pt">
     <h1>@Model.Greeting</h1>
-    <button type="button" class="btn " style="font-size:24pt; background-color:#C2847A; color:#280003">Adauga eveniment</button>
+    
+    <form method="post">
+        <button name="add" value="add" class="btn " style="font-size:24pt; background-color:#C2847A; color:#280003">
+            Adauga eveniment
+        </button>
+    </form>
+    
     <p>Lista curenta de evenimente:</p>
     <ul style="list-style:none">
         @foreach (var ev in Model.evenimente)

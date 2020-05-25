@@ -36,11 +36,19 @@ namespace web_plantastic.Pages
         public IActionResult OnPost()
         {
             
-            if (IsValidUser(utilizator, parola))
+            if(Request.Form["login"]=="login")
             {
-                return RedirectToPage("/UserPage",new { User = utilizator});
+                if (IsValidUser(utilizator, parola))
+                {
+                    return RedirectToPage("/UserPage",new { User = utilizator});
+                }
+                else return RedirectToPage("/Index", new { LoginError = true });
             }
-            else return RedirectToPage("/Index", new { LoginError = true });
+            if (Request.Form["register"] == "register")
+            {
+                return RedirectToPage("/Register");
+            }
+            return RedirectToPage("/Index");
         }
 
         public string helloRusia()
